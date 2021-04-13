@@ -15,7 +15,7 @@ public class UserMenuPanelHelper extends PageBase{
     WebElement emailOnMenu;
     @FindBy(css = "._1njv2a9PIrnydF")
     WebElement firstUserName;
-    @FindBy(xpath = "//*[contains(text(),'Activity')]/..")
+    @FindBy(xpath = "//span[contains(text(),'Activity')]/..")
     List<WebElement> activityMenuList;
 
     public UserMenuPanelHelper(WebDriver driver) {

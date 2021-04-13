@@ -4,6 +4,7 @@ package org.example.tests;
 
 
 import org.example.pages.*;
+import org.example.util.DataProviders;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -43,9 +44,10 @@ public class LoginTests extends TestBase{
 
 
 
-    @Test
-    public void loginPositive()  {
-        loginPage.enterLoginPasswordAttl(LOGIN,PASSWORD);
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "loginPositive")
+    public void loginPositive(String login, String password)  {
+        //loginPage.enterLoginPasswordAttl(LOGIN,PASSWORD);
+        loginPage.enterLoginPasswordAttl(login,password);
         boardsPage.waitUntilPageIsLoaded();
 
         Assert.assertEquals("Boards", boardsPage

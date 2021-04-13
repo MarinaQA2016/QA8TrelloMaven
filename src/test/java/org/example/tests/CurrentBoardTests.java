@@ -2,6 +2,7 @@ package org.example.tests;
 
 
 import org.example.pages.*;
+import org.example.util.DataProviders;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -48,14 +49,14 @@ public class CurrentBoardTests extends TestBase{
         Assert.assertEquals(qa8HaifaBoard.getLastListName(), newHeader);
     }
 
-    @Test
-    public void addNewCard(){
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "addCard")
+    public void addNewCard(String name){
         if(qa8HaifaBoard.getAddListButtonName().equals("Add a list")){
             qa8HaifaBoard.addNewList("NewList");
         }
 
         int cardsBefore = qa8HaifaBoard.getCardsQuantity();
-        qa8HaifaBoard.addNewCard("new card");
+        qa8HaifaBoard.addNewCard(name);
         int cardsAfter = qa8HaifaBoard.getCardsQuantity();
 
         Assert.assertEquals(cardsBefore+1,cardsAfter,
