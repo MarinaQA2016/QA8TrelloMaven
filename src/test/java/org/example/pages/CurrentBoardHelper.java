@@ -102,14 +102,14 @@ public class CurrentBoardHelper extends PageBase{
             return listHeaderLists.get(listsQuantity-1).getText();
     }
 
-    public void addNewCard() {
+    public void addNewCard(String nameCard) {
         //------ Define "Add Card" button and click it ------
         waitUntilElementIsClickable(addNewCard,10);
         addNewCard.click();
 
         //-------Define title field of the card and fill in it ----
         waitUntilElementIsClickable(cardTitle,10);
-        fillField(cardTitle,"new card");
+        fillField(cardTitle,nameCard);
 
         //----- Define 'Add Card' button and click it -----------
         submitCard.click();

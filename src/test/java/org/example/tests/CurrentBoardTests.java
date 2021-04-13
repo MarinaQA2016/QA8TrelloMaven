@@ -55,7 +55,7 @@ public class CurrentBoardTests extends TestBase{
         }
 
         int cardsBefore = qa8HaifaBoard.getCardsQuantity();
-        qa8HaifaBoard.addNewCard();
+        qa8HaifaBoard.addNewCard("new card");
         int cardsAfter = qa8HaifaBoard.getCardsQuantity();
 
         Assert.assertEquals(cardsBefore+1,cardsAfter,
