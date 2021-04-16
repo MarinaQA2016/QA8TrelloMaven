@@ -42,6 +42,29 @@ public class LoginTests extends TestBase{
 
     }
 
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "loginNegative")
+    public void loginNegativeParametric(String login, String password, String message) {
+        loginPage.enterLoginPassNotAttl(login,password);
+
+        Assert.assertTrue(loginPage.getErrorNotAttlMessage().equals(message),"The error-message isn't correct");
+
+    }
+
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "dataProviderSecond")
+    public void loginNegativeParametricSecond(String login, String password) {
+        loginPage.enterLoginPassNotAttl(login,password);
+
+        Assert.assertTrue(loginPage.getErrorNotAttlMessage().equals("There isn't an account for this username"),"The error-message isn't correct");
+
+    }
+
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "dataProviderThird")
+    public void loginNegativeParametricThird(String login, String password) {
+        loginPage.enterLoginPassNotAttl(login,password);
+
+        Assert.assertTrue(loginPage.getErrorNotAttlMessage().equals("There isn't an account for this email"),"The error-message isn't correct");
+
+    }
 
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "loginPositive")

@@ -42,6 +42,22 @@ public class DataProviders {
         return userData.iterator();
     }
 
+    @DataProvider
+    public static Iterator<Object[]> loginNegative() throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(
+                DataProviders.class
+                        .getResourceAsStream("/loginNegative.data")));
+
+        List<Object[]> userData = new ArrayList<Object[]>();
+        String line = in.readLine();
+        while (line != null) {
+            userData.add(line.split(";"));
+            line = in.readLine();
+        }
+        in.close();
+        return userData.iterator();
+    }
+
 
 
 
@@ -49,9 +65,9 @@ public class DataProviders {
     @DataProvider
     public static Iterator<Object[]> dataProviderSecond() {
         List<Object[]> data = new ArrayList();
-        data.add(new Object[]{"value11", "value21"});
-        data.add(new Object[]{"value12", "value22"});
-        data.add(new Object[]{"value13", "value23"});
+        data.add(new Object[]{"login1", "password1"});
+        data.add(new Object[]{"login2", "password2"});
+        data.add(new Object[]{"login3", "password3"});
 
         return data.iterator();
     }
