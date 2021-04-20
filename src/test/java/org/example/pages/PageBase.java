@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import org.example.util.LogLog4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class PageBase {
+    public static LogLog4j log4j = new LogLog4j();
     WebDriver driver;
     public PageBase(WebDriver driver) {
         this.driver = driver;

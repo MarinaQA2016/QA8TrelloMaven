@@ -35,9 +35,14 @@ public class LoginPageHelper extends PageBase{
     }
 
     public LoginPageHelper enterLoginPassNotAttl(String login, String password) {
+        log4j.info("  !!!  Method 'enterLoginPassNotAttl' was started  !!!  ");
         this.enterLoginNotAttl(login);
+        log4j.info("Login value = " + login + "was entered");
         this.enterPasswordNotAttl(password);
+        log4j.info("Password value = " + password + "was entered");
         this.clickLoginInButtonNotAttl();
+        log4j.info("Click on the 'Login' button");
+        log4j.info("  !!!  Method 'enterLoginPassNotAttl' was finished  !!!  ");
         return this;
     }
 

@@ -5,6 +5,7 @@ import java.net.URL;
 
 import org.example.SuiteConfiguration;
 import org.example.pages.HomePageHelper;
+import org.example.util.LogLog4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.Capabilities;
 
@@ -29,6 +30,7 @@ public class TestBase {
   public HomePageHelper homePage;
   public static final String LOGIN = "marinaqatest2019@gmail.com";
   public static final String PASSWORD = "marinaqa";
+  public static LogLog4j log4j = new LogLog4j();
 
   @BeforeSuite
   public void initTestSuite() throws IOException {

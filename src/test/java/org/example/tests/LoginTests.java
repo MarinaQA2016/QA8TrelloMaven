@@ -44,9 +44,14 @@ public class LoginTests extends TestBase{
 
     @Test(dataProviderClass = DataProviders.class, dataProvider = "loginNegative")
     public void loginNegativeParametric(String login, String password, String message) {
+        log4j.startTestCase("loginNegativeParametric");
+        log4j.parameter("login",login);
+        log4j.parameter("password",password);
         loginPage.enterLoginPassNotAttl(login,password);
+        log4j.info("Not attlassian (login=" + login +", password=" + password+") were entered ");
 
         Assert.assertTrue(loginPage.getErrorNotAttlMessage().equals(message),"The error-message isn't correct");
+        log4j.endTestCase();
 
     }
 
