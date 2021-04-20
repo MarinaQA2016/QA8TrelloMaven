@@ -58,11 +58,11 @@ public class LoginTests extends TestBase{
 
     }
 
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "dataProviderThird")
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "loginNegativeRandom")
     public void loginNegativeParametricThird(String login, String password) {
         loginPage.enterLoginPassNotAttl(login,password);
 
-        Assert.assertTrue(loginPage.getErrorNotAttlMessage().equals("There isn't an account for this email"),"The error-message isn't correct");
+        Assert.assertTrue(loginPage.getErrorNotAttlMessage().equals("There isn't an account for this username"),"The error-message isn't correct");
 
     }
 

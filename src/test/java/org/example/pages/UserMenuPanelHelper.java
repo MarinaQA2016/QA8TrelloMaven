@@ -17,6 +17,8 @@ public class UserMenuPanelHelper extends PageBase{
     WebElement firstUserName;
     @FindBy(xpath = "//span[contains(text(),'Activity')]/..")
     List<WebElement> activityMenuList;
+    @FindBy(xpath = "//*[contains(text(),'Help')]")
+    WebElement helpMenu;
 
     public UserMenuPanelHelper(WebDriver driver) {
         super(driver);
@@ -27,6 +29,7 @@ public class UserMenuPanelHelper extends PageBase{
         waitUntilElementIsClickable(profileAndVisibilityMenu,10);
         int last = activityMenuList.size()-1;
         waitUntilElementIsClickable(activityMenuList.get(last),15);
+        waitUntilElementIsClickable(helpMenu,10);
     }
     public void openUserMenu(){
         userMenuButton.click();
@@ -45,5 +48,8 @@ public class UserMenuPanelHelper extends PageBase{
     public void openActivityPage(){
         int last = activityMenuList.size()-1;
         activityMenuList.get(last).click();
+    }
+    public void openHelpPage(){
+        helpMenu.click();
     }
 }

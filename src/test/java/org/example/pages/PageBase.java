@@ -88,9 +88,27 @@ public class PageBase {
         }
     }
 
+    public void waitUntilAllWindowsAreLoaded(int windows,int time){
+        try {
+            new WebDriverWait(driver, time).until(ExpectedConditions.numberOfWindowsToBe(2));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void fillField(WebElement element, String value) {
         element.clear();
         element.click();
         element.sendKeys(value);
+    }
+
+    public String getAnotherWindowHandle(){
+        String firstWindow = driver.getWindowHandle();
+        String secondWindow = "";
+        for(String wCode: driver.getWindowHandles()) {
+            System.out.println("Window: " + wCode);
+            if (!wCode.equals(firstWindow)) secondWindow = wCode;
+        }
+        return secondWindow;
     }
 }
