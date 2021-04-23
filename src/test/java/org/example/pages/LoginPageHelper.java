@@ -1,5 +1,6 @@
 package org.example.pages;
 
+import org.example.util.LogLog4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

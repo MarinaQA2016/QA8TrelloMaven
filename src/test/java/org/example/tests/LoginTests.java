@@ -5,6 +5,7 @@ package org.example.tests;
 
 import org.example.pages.*;
 import org.example.util.DataProviders;
+import org.example.util.LogLog4j;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -39,6 +40,7 @@ public class LoginTests extends TestBase{
 
         Assert.assertTrue(loginPage.getErrorNotAttlMessage()
                 .contains("Missing"),"The error-message isn't correct");
+
 
     }
 

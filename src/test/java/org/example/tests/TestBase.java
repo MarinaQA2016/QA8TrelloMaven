@@ -25,12 +25,13 @@ public class TestBase {
   protected static URL gridHubUrl = null;
   protected static String baseUrl;
   protected static Capabilities capabilities;
+  public static LogLog4j log4j = new LogLog4j();
 
   protected WebDriver driver;
   public HomePageHelper homePage;
   public static final String LOGIN = "marinaqatest2019@gmail.com";
   public static final String PASSWORD = "marinaqa";
-  public static LogLog4j log4j = new LogLog4j();
+
 
   @BeforeSuite
   public void initTestSuite() throws IOException {
