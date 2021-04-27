@@ -16,7 +16,7 @@ public class LoginTests extends TestBase{
     BoardsPageHelper boardsPage;
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initTests()  {
         loginPage = PageFactory.initElements(driver, LoginPageHelper.class);
         boardsPage = PageFactory.initElements(driver,BoardsPageHelper.class);
@@ -74,7 +74,7 @@ public class LoginTests extends TestBase{
     }
 
 
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "loginPositive")
+    @Test(groups = {"smoke","regression"},dataProviderClass = DataProviders.class, dataProvider = "loginPositive")
     public void loginPositive(String login, String password)  {
         //loginPage.enterLoginPasswordAttl(LOGIN,PASSWORD);
         loginPage.enterLoginPasswordAttl(login,password);

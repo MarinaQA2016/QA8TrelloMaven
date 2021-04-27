@@ -13,7 +13,7 @@ public class CurrentBoardTests extends TestBase{
     BoardsPageHelper boardsPage;
     CurrentBoardHelper qa8HaifaBoard;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initTests()  {
         loginPage = PageFactory.initElements(driver, LoginPageHelper.class);
         boardsPage = PageFactory.initElements(driver,BoardsPageHelper.class);
@@ -27,7 +27,7 @@ public class CurrentBoardTests extends TestBase{
         qa8HaifaBoard.waitUntilPageIsLoaded();
 
     }
-    @Test
+    @Test(groups = {"regression","specialForQA8"})
     public void createNewList()  {
 
         int listsBefore = qa8HaifaBoard.getListsQuantity();
@@ -64,7 +64,7 @@ public class CurrentBoardTests extends TestBase{
 
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void deleteAnyList(){
         if(qa8HaifaBoard.getAddListButtonName().equals("Add a list")){
             qa8HaifaBoard.addNewList("NewList");
