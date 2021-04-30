@@ -65,6 +65,7 @@ public class LoginTests extends TestBase{
 
     }
 
+
     @Test(dataProviderClass = DataProviders.class, dataProvider = "loginNegativeRandom")
     public void loginNegativeParametricThird(String login, String password) {
         loginPage.enterLoginPassNotAttl(login,password);
